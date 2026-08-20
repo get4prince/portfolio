@@ -487,28 +487,29 @@
           <path class="d-edge core" d="M185,95 L225,95" marker-end="url(#ar1a)"/>
           <path class="d-edge core" d="M375,95 L415,95" marker-end="url(#ar1a)"/>
           <path class="d-edge core" d="M565,95 L605,95" marker-end="url(#ar1a)"/>
-          <path class="d-edge core" d="M885,95 L925,95" marker-end="url(#ar1a)"/>
 
-          <path class="d-edge" d="M742,95 C742,180 735,180 728,255" marker-end="url(#ar1)"/>
-          <path class="d-edge" d="M742,95 C742,180 588,180 580,255" marker-end="url(#ar1)"/>
+          <path class="d-edge" d="M660,116 C660,175 420,175 340,220" marker-end="url(#ar1)"/>
+          <path class="d-edge" d="M720,116 C720,175 525,175 525,220" marker-end="url(#ar1)"/>
 
-          <path class="d-edge core" d="M370,255 L455,255" marker-end="url(#ar1a)"/>
-          <path class="d-edge core" d="M650,255 L770,255" marker-end="url(#ar1a)"/>
+          <path class="d-edge core" d="M410,255 L455,255" marker-end="url(#ar1a)"/>
+          <path class="d-edge core" d="M595,255 L770,255" marker-end="url(#ar1a)"/>
+
+          <path class="d-edge core" d="M865,220 L865,116" marker-end="url(#ar1a)"/>
 
           <circle class="d-packet" r="4"><animateMotion dur="1.6s" repeatCount="indefinite" path="M185,95 L225,95"/></circle>
           <circle class="d-packet" r="4"><animateMotion dur="1.6s" begin="0.5s" repeatCount="indefinite" path="M375,95 L415,95"/></circle>
           <circle class="d-packet" r="4"><animateMotion dur="1.6s" begin="0.2s" repeatCount="indefinite" path="M565,95 L605,95"/></circle>
-          <circle class="d-packet" r="4"><animateMotion dur="2s" repeatCount="indefinite" path="M742,95 C742,180 588,180 580,255"/></circle>
-          <circle class="d-packet" r="4"><animateMotion dur="2s" begin="1s" repeatCount="indefinite" path="M742,95 C742,180 735,180 728,255"/></circle>
-          <circle class="d-packet" r="4"><animateMotion dur="1.8s" repeatCount="indefinite" path="M650,255 L770,255"/></circle>
-          <circle class="d-packet" r="4"><animateMotion dur="1.8s" begin="0.9s" repeatCount="indefinite" path="M370,255 L455,255"/></circle>
-          <circle class="d-packet" r="4"><animateMotion dur="1.6s" begin="0.7s" repeatCount="indefinite" path="M885,95 L925,95"/></circle>
+          <circle class="d-packet" r="4"><animateMotion dur="2s" repeatCount="indefinite" path="M660,116 C660,175 420,175 340,220"/></circle>
+          <circle class="d-packet" r="4"><animateMotion dur="2s" begin="1s" repeatCount="indefinite" path="M720,116 C720,175 525,175 525,220"/></circle>
+          <circle class="d-packet" r="4"><animateMotion dur="1.8s" repeatCount="indefinite" path="M595,255 L770,255"/></circle>
+          <circle class="d-packet" r="4"><animateMotion dur="1.8s" begin="0.9s" repeatCount="indefinite" path="M410,255 L455,255"/></circle>
+          <circle class="d-packet" r="4"><animateMotion dur="1.6s" begin="0.7s" repeatCount="indefinite" path="M865,220 L865,116"/></circle>
 
           <g class="d-node src"><rect x="40" y="60" width="145" height="56" rx="9"/><text class="t" x="112" y="88" text-anchor="middle">Exchange feeds</text><text class="s" x="112" y="106" text-anchor="middle">crypto sockets</text></g>
           <g class="d-node core"><rect x="225" y="60" width="150" height="56" rx="9"/><text class="t" x="300" y="88" text-anchor="middle">Node WS clients</text><text class="s" x="300" y="106" text-anchor="middle">ingest · sanitize</text></g>
           <g class="d-node core"><rect x="415" y="60" width="150" height="56" rx="9"/><text class="t" x="490" y="88" text-anchor="middle">Kafka</text><text class="s" x="490" y="106" text-anchor="middle">market.ticks</text></g>
           <g class="d-node core"><rect x="605" y="60" width="150" height="56" rx="9"/><text class="t" x="680" y="88" text-anchor="middle">Indicator engine</text><text class="s" x="680" y="106" text-anchor="middle">20–30 live</text></g>
-          <g class="d-node src"><rect x="925" y="60" width="120" height="56" rx="9"/><text class="t" x="985" y="88" text-anchor="middle">Charts</text><text class="s" x="985" y="106" text-anchor="middle">alerts</text></g>
+          <g class="d-node src"><rect x="770" y="60" width="190" height="56" rx="9"/><text class="t" x="865" y="88" text-anchor="middle">Charts</text><text class="s" x="865" y="106" text-anchor="middle">alerts</text></g>
 
           <g class="d-node store"><rect x="270" y="220" width="140" height="56" rx="9"/><text class="t" x="340" y="248" text-anchor="middle">Redis cache</text><text class="s" x="340" y="266" text-anchor="middle">hot reads · TTL</text></g>
           <g class="d-node store"><rect x="455" y="220" width="140" height="56" rx="9"/><text class="t" x="525" y="248" text-anchor="middle">TimescaleDB</text><text class="s" x="525" y="266" text-anchor="middle">OHLC history</text></g>
@@ -587,8 +588,8 @@
           <h3 class="diagram-title">03 · MSP billing &amp; account infrastructure</h3>
           <span class="diagram-tag">ZenKoder · Blackpoint · 2025–present</span>
         </div>
-        <p class="diagram-body">Billing and provisioning for an MSP security platform: idempotent, atomic money-correct APIs over PostgreSQL + MongoDB, with Pax8 / ConnectWise integrations powering end-to-end partner billing.</p>
-        <svg class="svgbox" viewBox="0 0 1120 300" role="img" aria-label="Architecture diagram: MSP partners call the billing API which writes through an idempotent atomic layer to PostgreSQL ledger and MongoDB records, integrated with Pax8 and ConnectWise to bill 80 plus partners.">
+        <p class="diagram-body">Billing and provisioning for an MSP security platform: idempotent, atomic money-correct APIs over PostgreSQL, with Pax8 / ConnectWise integrations powering end-to-end partner billing.</p>
+        <svg class="svgbox" viewBox="0 0 1120 300" role="img" aria-label="Architecture diagram: MSP partners call the billing API which writes through an idempotent atomic layer to a PostgreSQL ledger, integrated with Pax8 and ConnectWise to bill 80 plus partners.">
           <defs>
             <marker id="ar3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
               <path d="M0,0 L10,5 L0,10 z" fill="rgba(148,163,184,0.55)"/>
@@ -599,17 +600,15 @@
           </defs>
 
           <path class="d-edge core" d="M190,70 L225,70" marker-end="url(#ar3a)"/>
-          <path class="d-edge core" d="M430,70 L470,70" marker-end="url(#ar3a)"/>
-          <path class="d-edge" d="M330,98 L330,205" marker-end="url(#ar3)"/>
-          <path class="d-edge" d="M565,98 C565,160 610,160 610,205" marker-end="url(#ar3)"/>
-          <path class="d-edge" d="M565,98 C565,160 895,160 895,205" marker-end="url(#ar3)"/>
+          <path class="d-edge core" d="M380,70 L470,70" marker-end="url(#ar3a)"/>
+          <path class="d-edge" d="M565,94 C565,160 610,160 610,205" marker-end="url(#ar3)"/>
+          <path class="d-edge" d="M565,94 C565,160 895,160 895,205" marker-end="url(#ar3)"/>
           <path class="d-edge core" d="M565,70 L815,70" marker-end="url(#ar3a)"/>
 
           <circle class="d-packet" r="4"><animateMotion dur="1.4s" repeatCount="indefinite" path="M190,70 L225,70"/></circle>
-          <circle class="d-packet" r="4"><animateMotion dur="1.6s" begin="0.4s" repeatCount="indefinite" path="M430,70 L470,70"/></circle>
-          <circle class="d-packet" r="4"><animateMotion dur="2.2s" repeatCount="indefinite" path="M330,98 L330,205"/></circle>
-          <circle class="d-packet" r="4"><animateMotion dur="2.4s" begin="0.6s" repeatCount="indefinite" path="M565,98 C565,160 610,160 610,205"/></circle>
-          <circle class="d-packet" r="4"><animateMotion dur="3s" begin="0.3s" repeatCount="indefinite" path="M565,98 C565,160 895,160 895,205"/></circle>
+          <circle class="d-packet" r="4"><animateMotion dur="1.6s" begin="0.4s" repeatCount="indefinite" path="M380,70 L470,70"/></circle>
+          <circle class="d-packet" r="4"><animateMotion dur="2.4s" begin="0.6s" repeatCount="indefinite" path="M565,94 C565,160 610,160 610,205"/></circle>
+          <circle class="d-packet" r="4"><animateMotion dur="3s" begin="0.3s" repeatCount="indefinite" path="M565,94 C565,160 895,160 895,205"/></circle>
           <circle class="d-packet" r="4"><animateMotion dur="1.6s" begin="0.8s" repeatCount="indefinite" path="M565,70 L815,70"/></circle>
 
           <g class="d-node src"><rect x="30" y="38" width="160" height="56" rx="9"/><text class="t" x="110" y="66" text-anchor="middle">MSP partner</text><text class="s" x="110" y="84" text-anchor="middle">bills end users</text></g>
@@ -617,7 +616,6 @@
           <g class="d-node store"><rect x="470" y="38" width="190" height="56" rx="9"/><text class="t" x="565" y="66" text-anchor="middle">PostgreSQL ledger</text><text class="s" x="565" y="84" text-anchor="middle">money-correct state</text></g>
           <g class="d-node src"><rect x="815" y="38" width="185" height="56" rx="9"/><text class="t" x="907" y="66" text-anchor="middle">80+ MSPs billed</text><text class="s" x="907" y="84" text-anchor="middle">~$6–7M ARR</text></g>
 
-          <g class="d-node store"><rect x="235" y="205" width="150" height="56" rx="9"/><text class="t" x="310" y="233" text-anchor="middle">MongoDB</text><text class="s" x="310" y="251" text-anchor="middle">records · audit</text></g>
           <g class="d-node core"><rect x="530" y="205" width="150" height="56" rx="9"/><text class="t" x="605" y="233" text-anchor="middle">Pax8</text><text class="s" x="605" y="251" text-anchor="middle">provisioning</text></g>
           <g class="d-node core"><rect x="820" y="205" width="170" height="56" rx="9"/><text class="t" x="905" y="233" text-anchor="middle">ConnectWise</text><text class="s" x="905" y="251" text-anchor="middle">billing sync</text></g>
 

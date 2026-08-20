@@ -1,0 +1,9 @@
+# Vercel
+.vercel/
+
+# Logs
+*.log
+
+# Preview screenshots (not part of the site)
+preview-*.png
+preview-*.jpg

@@ -7,3 +7,6 @@
 # Preview screenshots (not part of the site)
 preview-*.png
 preview-*.jpg
+
+# Command Code agent tooling (user-local config)
+.commandcode/

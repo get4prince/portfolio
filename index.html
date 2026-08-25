@@ -103,6 +103,14 @@
     .nav-links a.active::after { display: none; }
   }
 
+  /* ---------- SCROLL PROGRESS ---------- */
+  .nav-progress {
+    position: absolute; left: 0; right: 0; bottom: -1px;
+    height: 2px; background: currentColor;
+    transform: scaleX(0); transform-origin: 0 50%;
+    pointer-events: none;
+  }
+
   /* ---------- HERO ---------- */
   header.hero {
     min-height: 100dvh; position: relative;
@@ -357,6 +365,7 @@
       <li><a href="#contact"><span class="no">03</span>Contact</a></li>
     </ul>
   </div>
+  <div class="nav-progress" id="navProgress" aria-hidden="true"></div>
 </nav>
 
 <!-- ================= HERO ================= -->
@@ -597,6 +606,8 @@
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" defer></script>
 <script>
 (function () {
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -842,6 +853,85 @@
 
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* --- Scroll progress hairline (dependency-free) --- */
+  var progressBar = document.getElementById("navProgress");
+  if (progressBar) {
+    var updateProgress = function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - window.innerHeight;
+      var p = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      progressBar.style.transform = "scaleX(" + p + ")";
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
+  }
+
+  /* --- Fact counters (dependency-free, honors reduced motion) --- */
+  if (!reduceMotion && "IntersectionObserver" in window) {
+    var factEls = document.querySelectorAll(".fact b");
+    var countIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        countIO.unobserve(e.target);
+        var el = e.target;
+        var raw = el.textContent.trim();
+        if (/^\d+\s*-\s*\d/.test(raw)) return; /* skip ranges like 2-3M */
+        var m = raw.match(/^(\d+(?:\.\d+)?)(.*)$/);
+        if (!m) return;
+        var target = parseFloat(m[1]);
+        if (isNaN(target)) return;
+        var decimals = (m[1].split(".")[1] || "").length;
+        var suffix = m[2];
+        var start = null, dur = 1100;
+        var step = function (ts) {
+          if (start === null) start = ts;
+          var p = Math.min((ts - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = (target * eased).toFixed(decimals) + suffix;
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.6 });
+    factEls.forEach(function (el) { countIO.observe(el); });
+  }
+
+  /* --- GSAP ScrollTrigger enhancements (progressive enhancement) --- */
+  function initGsapMotion() {
+    if (reduceMotion || !window.gsap || !window.ScrollTrigger) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    /* hero handoff: content eases up and fades as you scroll into the page */
+    gsap.to(".hero-foot, .hero-meta", {
+      opacity: 0, y: -46, ease: "none",
+      scrollTrigger: { trigger: "#top", start: "top top", end: "75% top", scrub: true }
+    });
+
+    /* subtle parallax inside project diagram screens */
+    document.querySelectorAll(".screen svg").forEach(function (svg) {
+      var device = svg.closest(".device");
+      gsap.fromTo(svg, { yPercent: 3 }, {
+        yPercent: -3, ease: "none",
+        scrollTrigger: { trigger: device, start: "top bottom", end: "bottom top", scrub: true }
+      });
+    });
+
+    /* experience table rows stagger in once */
+    gsap.from("#experience .xtable tbody tr", {
+      opacity: 0, y: 18, duration: 0.55, stagger: 0.07, ease: "power2.out",
+      scrollTrigger: { trigger: "#experience .xtable", start: "top 78%", once: true }
+    });
+
+    ScrollTrigger.refresh();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initGsapMotion);
+  } else {
+    initGsapMotion();
+  }
 })();
 </script>
 </body>

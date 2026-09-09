@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prince Kumar - Senior Software Engineer</title>
-<meta name="description" content="Senior Software Engineer, 6.5+ years. Node.js, Kafka, Redis, TimescaleDB, Kubernetes, RAG/LLM apps. Fintech, supply chain, MSP security. I build real-time systems that move money, without breaking.">
+<title>Prince Kumar - Senior Full-Stack Engineer</title>
+<meta name="description" content="Senior Full-Stack Engineer, 6.5+ years. React, Redux, Node.js, TypeScript, Kafka, Redis, TimescaleDB, Kubernetes, RAG/LLM apps. Fintech, crypto, supply chain, proptech. I lead product front-ends and the real-time systems behind them.">
 <link rel="canonical" href="https://getforprince.online/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Prince Kumar">
 <meta property="og:url" content="https://getforprince.online/">
-<meta property="og:title" content="Prince Kumar - Senior Software Engineer">
-<meta property="og:description" content="I build real-time systems that move money. 6.5+ years across fintech, crypto, supply chain and MSP security — Kafka, Redis, TimescaleDB, Kubernetes. Currently solo-building torek.app, an AI interview-coaching platform.">
+<meta property="og:title" content="Prince Kumar - Senior Full-Stack Engineer">
+<meta property="og:description" content="Senior Full-Stack Engineer. 6.5+ years shipping products end-to-end across fintech, crypto, supply chain and proptech — React/Redux front-ends, real-time Node backends, PCI DSS. Currently solo-building torek.app, an AI interview-coaching platform.">
 <meta property="og:image" content="https://getforprince.online/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Prince Kumar — Senior Software Engineer. I build real-time systems that move money.">
+<meta property="og:image:alt" content="Prince Kumar — Senior Full-Stack Engineer. React front-ends and the real-time systems behind them.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Prince Kumar - Senior Software Engineer">
-<meta name="twitter:description" content="Backend &amp; real-time systems: Kafka, Redis, TimescaleDB, Kubernetes. Currently building torek.app, an AI interview-coaching platform.">
+<meta name="twitter:title" content="Prince Kumar - Senior Full-Stack Engineer">
+<meta name="twitter:description" content="Full-stack &amp; real-time systems: React, Redux, Node.js, Kafka, Redis, TimescaleDB, Kubernetes. Currently building torek.app, an AI interview-coaching platform.">
 <meta name="twitter:image" content="https://getforprince.online/og.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23ff4f00'/><text x='50' y='71' font-size='58' text-anchor='middle' font-family='Arial, sans-serif' font-weight='700' fill='%23fffefb'>P</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,7 +30,7 @@
   "name": "Prince Kumar",
   "url": "https://getforprince.online/",
   "image": "https://getforprince.online/og.png",
-  "jobTitle": "Senior Software Engineer",
+  "jobTitle": "Senior Full-Stack Engineer",
   "email": "mailto:getforprince@hotmail.com",
   "telephone": "+91-87003-25129",
   "address": {
@@ -43,7 +43,7 @@
     "@type": "CollegeOrUniversity",
     "name": "University School of Information and Communication Technology, GGSIPU"
   },
-  "knowsAbout": ["Node.js", "TypeScript", "PostgreSQL", "TimescaleDB", "Redis", "Kafka", "Kubernetes", "AWS", "WebSockets", "RAG", "LLM applications", "System Design"],
+  "knowsAbout": ["React", "Redux", "TypeScript", "Micro-frontends", "Node.js", "PostgreSQL", "TimescaleDB", "Redis", "Kafka", "Kubernetes", "AWS", "WebSockets", "RAG", "LLM applications", "System Design"],
   "sameAs": [
     "https://github.com/get4prince",
     "https://linkedin.com/in/getforprince",
@@ -340,8 +340,8 @@
     letter-spacing: -0.01em;
   }
   .chip.co { background: var(--canvas); border-color: var(--line); color: var(--body); }
-  .proj-tags a, .x-co a { color: inherit; text-decoration: none; }
-  .chip a:hover, .x-co a:hover { color: var(--primary); }
+  .proj-tags a { color: inherit; text-decoration: none; }
+  .chip a:hover { color: var(--primary); }
   .shot {
     background: var(--canvas);
     border: 1px solid var(--line);
@@ -450,28 +450,47 @@
   }
   @media (max-width: 900px) { .exp-grid { grid-template-columns: 1fr; } }
   .exp-copy { display: grid; gap: 18px; justify-items: start; }
-  .exp-desc { color: var(--body); max-width: 42ch; }
-  .xtable { width: 100%; border-collapse: collapse; }
-  .xtable th {
-    font-size: 11.5px; font-weight: 600; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--body-mid);
-    text-align: left; padding: 0 16px 14px 0;
-    border-bottom: 1px solid var(--ink);
+  .exp-desc { color: var(--body); max-width: 44ch; }
+  .xlist { display: grid; gap: 16px; }
+  .xjob {
+    background: var(--canvas);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-card);
+    padding: clamp(18px, 2vw, 26px) clamp(18px, 2.4vw, 30px);
+    display: grid; gap: 15px;
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
   }
-  .xtable th:last-child { text-align: right; }
-  .xtable td {
-    padding: 19px 16px 19px 0; border-bottom: 1px solid var(--line);
-    vertical-align: baseline;
+  .xjob:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(32,21,21,.05), 0 30px 60px -44px rgba(32,21,21,.4); }
+  .xj-top { display: flex; align-items: flex-start; gap: 16px; }
+  .xj-no {
+    font-family: var(--font-d); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.14em; color: var(--primary);
+    background: rgba(255, 79, 0, 0.09);
+    border-radius: var(--r-sm); padding: 6px 9px; line-height: 1;
+    flex: 0 0 auto; margin-top: 2px;
   }
-  .xtable tbody tr { transition: background-color .18s; }
-  .xtable tbody tr:hover { background: rgba(32, 21, 21, 0.03); }
-  .x-role { font-family: var(--font-d); font-size: clamp(1.05rem, 1.5vw, 1.28rem); font-weight: 600; letter-spacing: -0.015em; color: var(--ink); }
-  .x-co { font-size: 15px; color: var(--body); }
-  .x-yr { font-size: 13px; color: var(--body-mid); text-align: right; white-space: nowrap; font-weight: 600; }
-  @media (max-width: 600px) {
-    .xtable th:nth-child(2), .xtable td:nth-child(2) { display: none; }
-    .xtable th:first-child, .xtable td:first-child { padding-left: 0; }
-    .xtable th:last-child, .xtable td:last-child { padding-right: 0; }
+  .xj-role { font-family: var(--font-d); font-size: clamp(1.05rem, 1.4vw, 1.2rem); font-weight: 600; letter-spacing: -0.015em; color: var(--ink); line-height: 1.2; }
+  .xj-co { font-size: 14.5px; color: var(--body); margin-top: 4px; }
+  .xj-co a { color: var(--ink); font-weight: 600; }
+  .xj-co a:hover { color: var(--primary); }
+  .xj-yr {
+    margin-left: auto; flex: 0 0 auto;
+    font-family: var(--font-d); font-size: 12.5px; font-weight: 600;
+    letter-spacing: 0.03em; color: var(--primary); white-space: nowrap;
+    background: rgba(255, 79, 0, 0.07); border-radius: 999px; padding: 5px 10px;
+  }
+  .xj-bullets { list-style: none; display: grid; gap: 8px; font-size: 15px; line-height: 1.55; color: var(--body); }
+  .xj-bullets li { padding-left: 18px; position: relative; }
+  .xj-bullets li::before {
+    content: ""; position: absolute; left: 2px; top: 10px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--primary);
+  }
+  .xj-bullets b { color: var(--ink); font-weight: 600; }
+  .xj-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  @media (max-width: 560px) {
+    .xj-top { flex-wrap: wrap; gap: 10px; }
+    .xj-yr { margin-left: 26px; }
   }
 
   /* ---------- SKILLS ---------- */
@@ -595,6 +614,8 @@
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#work">Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -611,13 +632,13 @@
   <div class="hero-inner">
     <div class="hero-copy">
       <div class="hero-meta">
-        <span class="pill">Senior Software Engineer <span class="dim">&middot; Backend &amp; Real-time</span></span>
+        <span class="pill">Senior Full-Stack Engineer <span class="dim">&middot; React lead + real-time backend</span></span>
         <span class="pill"><span class="dot" aria-hidden="true"></span>Open to work <span class="dim">&mdash; Remote / Gurugram, IN</span></span>
       </div>
       <h1>I build <span class="hl">real&#8209;time systems</span> that move money.</h1>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#work">View my work</a>
-        <a class="btn btn-secondary" href="Prince-resume.pdf" target="_blank" rel="noopener">Download CV</a>
+        <a class="btn btn-secondary" href="prince-kumar.pdf" target="_blank" rel="noopener">Download CV</a>
         <a class="btn btn-txt" href="mailto:getforprince@hotmail.com"><span class="u">getforprince@hotmail.com</span></a>
       </div>
     </div>
@@ -634,7 +655,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 class="eyebrow reveal">Work</h2>
-      <p class="sec-lead reveal reveal-d1" style="max-width:56ch;">Systems I designed and ran in production &mdash; event-driven pipelines, real-time delivery layers, and billing infrastructure.</p>
+      <p class="sec-lead reveal reveal-d1" style="max-width:62ch;">Systems I designed and products I shipped &mdash; event-driven pipelines, real-time delivery layers, billing infrastructure, and an AI interview coach.</p>
     </div>
 
     <!-- 01 market data pipeline -->
@@ -673,7 +694,7 @@
       <div class="proj-info reveal reveal-d1">
         <h3 class="proj-title">Real-time Market Data Pipeline</h3>
         <div class="proj-tags">
-          <span class="chip">Kafka</span><span class="chip">Redis</span><span class="chip">TimescaleDB</span><span class="chip">Node.js</span><span class="chip co"><a href="https://hyblockcapital.com">Hyblock</a> &middot; 2020-22</span>
+          <span class="chip">Kafka</span><span class="chip">Redis</span><span class="chip">TimescaleDB</span><span class="chip">React &middot; TradingView</span><span class="chip co"><a href="https://hyblockcapital.com">Hyblock</a> &middot; 2020-22</span>
         </div>
       </div>
     </article>
@@ -713,7 +734,7 @@
       <div class="proj-info reveal reveal-d1">
         <h3 class="proj-title">WebSocket Scale-Out Layer</h3>
         <div class="proj-tags">
-          <span class="chip">Redis Pub/Sub</span><span class="chip">Socket.io</span><span class="chip">PCI DSS</span><span class="chip co"><a href="https://ixfi.com">IXFI</a> &middot; 2022-23</span>
+          <span class="chip">Redis Pub/Sub</span><span class="chip">Socket.io</span><span class="chip">React/Redux</span><span class="chip">PCI DSS</span><span class="chip co"><a href="https://ixfi.com">IXFI</a> &middot; 2022-23</span>
         </div>
       </div>
     </article>
@@ -749,7 +770,44 @@
       <div class="proj-info reveal reveal-d1">
         <h3 class="proj-title">MSP Billing Infrastructure</h3>
         <div class="proj-tags">
-          <span class="chip">PostgreSQL</span><span class="chip">Kubernetes</span><span class="chip">Pax8</span><span class="chip">ConnectWise</span><span class="chip co"><a href="https://zenkoder.com">ZenKoder</a> &middot; 2025-Now</span><span class="chip">Client: <a href="https://www.blackpointcyber.com/">Blackpoint</a></span>
+          <span class="chip">React/Redux</span><span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">Kubernetes</span><span class="chip">Pax8</span><span class="chip">ConnectWise</span><span class="chip co"><a href="https://zenkoder.com">ZenKoder</a> &middot; 2025-Now</span><span class="chip">Client: <a href="https://www.blackpointcyber.com/">Blackpoint</a></span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 torek: ai interview coach -->
+    <article class="proj">
+      <div class="proj-media reveal">
+        <div class="shot">
+          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="screen">
+            <svg viewBox="0 0 1000 330" role="img" aria-label="RAG coaching flow: a practice question is grounded over a curated corpus with pgvector retrieval, answered by an LLM, and gated by golden-set evals before shipping.">
+              <path class="dg-edge hot" d="M180,70 L240,70"/><path class="dg-edge hot" d="M390,70 L460,70"/><path class="dg-edge hot" d="M610,70 L700,70"/>
+              <path class="dg-edge" d="M535,98 L535,205"/>
+              <path class="dg-edge hot" d="M610,233 L700,233"/>
+              <path class="dg-edge" d="M535,210 C535,285 380,285 315,240"/>
+              <circle class="dg-pkt" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" path="M180,70 L240,70"/></circle>
+              <circle class="dg-pkt" r="4"><animateMotion dur="1.5s" begin="0.6s" repeatCount="indefinite" path="M390,70 L460,70"/></circle>
+              <circle class="dg-pkt" r="4"><animateMotion dur="1.8s" begin="0.3s" repeatCount="indefinite" path="M610,70 L700,70"/></circle>
+              <circle class="dg-pkt" r="4"><animateMotion dur="2s" begin="0.5s" repeatCount="indefinite" path="M535,98 L535,205"/></circle>
+              <circle class="dg-pkt" r="4"><animateMotion dur="2.2s" begin="0.4s" repeatCount="indefinite" path="M610,233 L700,233"/></circle>
+              <circle class="dg-pkt" r="4"><animateMotion dur="2.8s" begin="0.9s" repeatCount="indefinite" path="M535,210 C535,285 380,285 315,240"/></circle>
+              <g class="dg-node"><rect x="30" y="42" width="150" height="56" rx="9"/><text class="t" x="105" y="70" text-anchor="middle">Practice room</text><text class="s" x="105" y="88" text-anchor="middle">coding &middot; behavioral &middot; design</text></g>
+              <g class="dg-node store"><rect x="240" y="42" width="150" height="56" rx="9"/><text class="t" x="315" y="70" text-anchor="middle">Retrieval</text><text class="s" x="315" y="88" text-anchor="middle">pgvector &middot; curated corpus</text></g>
+              <g class="dg-node core"><rect x="460" y="42" width="150" height="56" rx="9"/><text class="t" x="535" y="70" text-anchor="middle">LLM</text><text class="s" x="535" y="88" text-anchor="middle">Gemini &middot; grounded prompt</text></g>
+              <g class="dg-node"><rect x="700" y="42" width="200" height="56" rx="9"/><text class="t" x="800" y="70" text-anchor="middle">Coached answer</text><text class="s" x="800" y="88" text-anchor="middle">hints &middot; rubric &middot; verdict</text></g>
+              <g class="dg-node store"><rect x="460" y="205" width="150" height="56" rx="9"/><text class="t" x="535" y="233" text-anchor="middle">Golden-set evals</text><text class="s" x="535" y="251" text-anchor="middle">R@5 / R@10 = 100%</text></g>
+              <g class="dg-node store"><rect x="700" y="205" width="200" height="56" rx="9"/><text class="t" x="800" y="233" text-anchor="middle">Ship gate</text><text class="s" x="800" y="251" text-anchor="middle">258 Jest tests &middot; CI</text></g>
+              <text class="dg-metric" x="30" y="18">RAG-GROUNDED COACHING <tspan class="dim">&#183; golden-set evals &#183; tolerant LLM JSON parsing</tspan></text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="proj-info reveal reveal-d1">
+        <h3 class="proj-title">Torek &mdash; AI Interview Coach</h3>
+        <div class="proj-tags">
+          <span class="chip co"><a href="https://torek.app" target="_blank" rel="noopener">torek.app</a> &middot; 2026 &middot; Founder</span>
+          <span class="chip">Node.js/TS</span><span class="chip">PostgreSQL &middot; Redis</span><span class="chip">React/Vite</span><span class="chip">RAG &middot; Gemini</span>
         </div>
       </div>
     </article>
@@ -762,21 +820,24 @@
     <div class="about-wrap">
       <h2 class="eyebrow reveal">About</h2>
       <p class="statement reveal reveal-d1">
-        I pair strong <span class="sw">backend engineering</span> skills
-        with a focus on <span class="sw">real&#8209;time systems.</span>
+        I lead product <span class="sw">front&#8209;ends</span> and the
+        <span class="sw">real&#8209;time systems</span> behind them.
       </p>
       <p class="about-sub reveal reveal-d2">
-        With 6+ years across fintech, crypto, supply chain and MSP security,
-        I take systems from whiteboard to production &mdash; and own them on call.
-        Atomic APIs, honest numbers, no surprises.
+        With 6.5+ years across fintech, crypto, supply chain and proptech,
+        I take products from whiteboard to production &mdash; and own them on call.
+        React/Redux at the edge, atomic APIs behind it. Clean UI, honest numbers, no surprises.
       </p>
       <p class="now-note reveal">
         <span class="now-pill">Now</span>
         <span>Solo-building <a href="https://torek.app" target="_blank" rel="noopener">torek.app</a> &mdash; an AI interview-coaching product. RAG-grounded answers, golden-set LLM evals, shipped end-to-end.</span>
       </p>
       <div class="about-facts reveal reveal-d3">
-        <div class="fact"><b>6.5+</b><span>Years shipping</span></div>
+        <div class="fact"><b>6.5+</b><span>Years shipping end-to-end</span></div>
+        <div class="fact"><b>200K</b><span>Users scaled &middot; 30K &rarr; 200K</span></div>
         <div class="fact"><b>80+</b><span>MSPs billed end-to-end</span></div>
+        <div class="fact"><b>15%</b><span>Less excess inventory</span></div>
+        <div class="fact"><b>$6-7M</b><span>ARR billed &middot; Blackpoint</span></div>
         <div class="fact"><b>2-3M</b><span>Requests / month served</span></div>
       </div>
     </div>
@@ -790,22 +851,112 @@
       <div class="exp-copy">
         <span class="eyebrow reveal">Profile</span>
         <h2 class="sec-title reveal reveal-d1" style="font-size:clamp(1.8rem,3.2vw,2.4rem);">My Experience</h2>
-        <p class="exp-desc reveal reveal-d2">Six years building and scaling backend systems, from crypto exchanges to MSP billing platforms.</p>
-        <a class="btn btn-outline reveal reveal-d2" href="Prince-resume.pdf" target="_blank" rel="noopener">Download CV</a>
+        <p class="exp-desc reveal reveal-d2">Six years shipping products end-to-end &mdash; from crypto trading UIs to MSP billing platforms. Pick a level to see the missions.</p>
+        <a class="btn btn-outline reveal reveal-d2" href="prince-kumar.pdf" target="_blank" rel="noopener">Download CV</a>
       </div>
-      <table class="xtable reveal reveal-d1">
-        <thead>
-          <tr><th scope="col">Role</th><th scope="col">Company</th><th scope="col">Year</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="x-role">Senior Software Engineer</td><td class="x-co"><a href="https://zenkoder.com">ZenKoder</a></td><td class="x-yr">2025 &rarr; NOW</td></tr>
-          <tr><td class="x-role">Senior Software Engineer</td><td class="x-co"><a href="https://www.capgrid.in">CapGrid</a></td><td class="x-yr">2023 &rarr; 24</td></tr>
-          <tr><td class="x-role">Software Engineer</td><td class="x-co"><a href="https://ixfi.com">IXFI</a></td><td class="x-yr">2022 &rarr; 23</td></tr>
-          <tr><td class="x-role">Software Engineer</td><td class="x-co"><a href="https://hyblockcapital.com">Hyblock Capital</a></td><td class="x-yr">2020 &rarr; 22</td></tr>
-          <tr><td class="x-role">Full Stack Developer</td><td class="x-co"><a href="https://www.findmycowork.com">FindMyCoWork</a></td><td class="x-yr">2019 &rarr; 20</td></tr>
-          <tr><td class="x-role">Trainee</td><td class="x-co"><a href="https://bel-india.in">Bharat Electronics</a></td><td class="x-yr">2018 &rarr; 19</td></tr>
-        </tbody>
-      </table>
+      <div class="xlist reveal reveal-d1">
+        <article class="xjob">
+          <div class="xj-top">
+            <span class="xj-no">01</span>
+            <div>
+              <div class="xj-role">Senior Software Engineer</div>
+              <div class="xj-co"><a href="https://zenkoder.com">ZenKoder</a> &middot; Remote, IN &middot; client <a href="https://www.blackpointcyber.com/">Blackpoint</a></div>
+            </div>
+            <span class="xj-yr">2025 &rarr; NOW</span>
+          </div>
+          <ul class="xj-bullets">
+            <li><b>80+ MSP partners &middot; ~$6&ndash;7M ARR</b> &mdash; lead a team of 3 building Blackpoint&rsquo;s billing &amp; account platform on React/Redux, Node.js, PostgreSQL and Kubernetes.</li>
+            <li><b>7 partner integrations</b> &mdash; wired Pax8, ConnectWise, Bitdefender, CyberCNS and Cisco Umbrella into one coherent React/Redux front end as front-end integration owner.</li>
+            <li><b>MTTR ~6h &rarr; 2&ndash;3h</b> &mdash; alerting dashboards, centralized logging (Prometheus/Grafana) and OpsGenie on-call incident response.</li>
+          </ul>
+          <div class="xj-chips"><span class="chip">React</span><span class="chip">Redux</span><span class="chip">Node.js</span><span class="chip">PostgreSQL</span><span class="chip">Kubernetes</span><span class="chip">Pax8</span><span class="chip">ConnectWise</span></div>
+        </article>
+
+        <article class="xjob">
+          <div class="xj-top">
+            <span class="xj-no">02</span>
+            <div>
+              <div class="xj-role">Senior Software Engineer</div>
+              <div class="xj-co"><a href="https://www.capgrid.in">CapGrid</a> &middot; Gurugram, IN</div>
+            </div>
+            <span class="xj-yr">2023 &rarr; 24</span>
+          </div>
+          <ul class="xj-bullets">
+            <li><b>&minus;15% excess inventory</b> &mdash; led the cross-functional inventory optimization tool on React/Redux over Node.js APIs.</li>
+            <li><b>&minus;20&ndash;25% supplier pricing</b> &mdash; drove competitive RFQs and margin growth.</li>
+            <li><b>Days &rarr; minutes</b> to insight &mdash; LLM-powered analytics on ClickHouse let the business team query in natural language.</li>
+            <li>Managed and mentored front-end engineers across <b>7 projects (team of 5)</b> and built the client&ndash;supplier ERP portal.</li>
+          </ul>
+          <div class="xj-chips"><span class="chip">React</span><span class="chip">Redux</span><span class="chip">Node.js</span><span class="chip">ClickHouse</span><span class="chip">LLM</span><span class="chip">ERP</span></div>
+        </article>
+
+        <article class="xjob">
+          <div class="xj-top">
+            <span class="xj-no">03</span>
+            <div>
+              <div class="xj-role">Software Engineer</div>
+              <div class="xj-co"><a href="https://ixfi.com">IXFI</a> &middot; Ahmedabad, IN</div>
+            </div>
+            <span class="xj-yr">2022 &rarr; 23</span>
+          </div>
+          <ul class="xj-bullets">
+            <li><b>30K &rarr; 200K users</b> &mdash; shipped React/Redux features: a real-time rewards/coins leaderboard (Redis), ticketing, contact management and a 2FA-removal workflow.</li>
+            <li><b>Horizontal WebSocket scale-out</b> &mdash; Redis Pub/Sub decoupled connection handling from message fan-out, preserving per-connection state and ordering.</li>
+            <li><b>Sub-second market data</b> &mdash; TimescaleDB for accurate OHLC charts, atomic/idempotent APIs, caching, indexing and schema versioning.</li>
+            <li>Shipped security hardening &mdash; input sanitization, NoSQL-injection prevention and PCI DSS compliance.</li>
+          </ul>
+          <div class="xj-chips"><span class="chip">React</span><span class="chip">Redux</span><span class="chip">Redis Pub/Sub</span><span class="chip">Socket.io</span><span class="chip">TimescaleDB</span><span class="chip">WebSockets</span><span class="chip">PCI DSS</span></div>
+        </article>
+
+        <article class="xjob">
+          <div class="xj-top">
+            <span class="xj-no">04</span>
+            <div>
+              <div class="xj-role">Software Engineer</div>
+              <div class="xj-co"><a href="https://hyblockcapital.com">Hyblock Capital</a> &middot; Noida, IN</div>
+            </div>
+            <span class="xj-yr">2020 &rarr; 22</span>
+          </div>
+          <ul class="xj-bullets">
+            <li><b>20&ndash;30 crypto indicators</b> &mdash; integrated into the React/Redux trading dashboard; co-built an in-house React wrapper around TradingView&rsquo;s charting API as shared infrastructure.</li>
+            <li><b>2&ndash;3M hits/month</b> &mdash; caching cut historical-data-query latency and DB load across the real-time analytics stack.</li>
+            <li>Built an automated <b>Bybit trading engine</b> executing on Hyblock indicators with execution-latency and reliability monitoring.</li>
+            <li>Engineered the Node.js WS&rarr;Kafka data backbone with connections, msg/sec, p95, reconnect and error-rate monitoring.</li>
+          </ul>
+          <div class="xj-chips"><span class="chip">React</span><span class="chip">TradingView</span><span class="chip">Node.js</span><span class="chip">Kafka</span><span class="chip">WebSockets</span><span class="chip">Bybit API</span></div>
+        </article>
+
+        <article class="xjob">
+          <div class="xj-top">
+            <span class="xj-no">05</span>
+            <div>
+              <div class="xj-role">Full Stack Developer</div>
+              <div class="xj-co"><a href="https://www.findmycowork.com">FindMyCoWork</a> &middot; Noida, IN</div>
+            </div>
+            <span class="xj-yr">2019 &rarr; 20</span>
+          </div>
+          <ul class="xj-bullets">
+            <li><b>Built findmycowork.com end-to-end</b> on Node.js/Express with EJS &mdash; server-rendered pages, APIs and data models to book, manage and sell coworking spaces.</li>
+            <li>Shipped a Reservation Management System (RMS), advanced shopping filters, integrated property e-commerce and a responsive mailing system.</li>
+          </ul>
+          <div class="xj-chips"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">EJS</span></div>
+        </article>
+
+        <article class="xjob">
+          <div class="xj-top">
+            <span class="xj-no">06</span>
+            <div>
+              <div class="xj-role">Trainee</div>
+              <div class="xj-co"><a href="https://bel-india.in">Bharat Electronics</a> &middot; Noida, IN</div>
+            </div>
+            <span class="xj-yr">2018 &rarr; 19</span>
+          </div>
+          <ul class="xj-bullets">
+            <li>Contributed to the national Marine Domain Awareness&ndash;Decision Support System for the Indian Navy.</li>
+          </ul>
+          <div class="xj-chips"><span class="chip">Systems &middot; Defense</span></div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -816,39 +967,43 @@
     <div class="sec-head">
       <span class="eyebrow reveal">Skillset</span>
       <h2 class="sec-title reveal reveal-d1">Core Skills</h2>
-      <p class="sec-lead reveal reveal-d1">Over six years I&rsquo;ve built a deep, production-tested toolkit.</p>
+      <p class="sec-lead reveal reveal-d1">Over six years I&rsquo;ve built a deep, full-stack, production-tested toolkit.</p>
     </div>
     <div class="skills">
       <div class="skill reveal">
         <span class="sk-no">01</span>
-        <div class="sk-name">Backend Engineering</div>
+        <div class="sk-name">Front-End Engineering</div>
         <ul class="sk-list">
-          <li>Node.js &middot; TypeScript</li>
-          <li>Express &middot; REST</li>
+          <li>React &middot; Redux Toolkit/Thunk</li>
+          <li>Hooks &middot; Micro-frontends (module federation)</li>
+          <li>TypeScript &middot; TradingView charting</li>
         </ul>
       </div>
       <div class="skill reveal reveal-d1">
         <span class="sk-no">02</span>
-        <div class="sk-name">Real-time Systems</div>
+        <div class="sk-name">Backend Engineering</div>
         <ul class="sk-list">
-          <li>Kafka &middot; Redis Pub/Sub</li>
-          <li>WebSockets</li>
+          <li>Node.js &middot; Express &middot; TypeScript</li>
+          <li>REST &amp; WebSocket APIs &middot; Microservices</li>
+          <li>Idempotent &amp; atomic APIs &middot; rate limiting</li>
         </ul>
       </div>
       <div class="skill reveal reveal-d2">
         <span class="sk-no">03</span>
-        <div class="sk-name">Data &amp; Storage</div>
+        <div class="sk-name">Real-time Systems</div>
         <ul class="sk-list">
-          <li>PostgreSQL &middot; TimescaleDB</li>
-          <li>ClickHouse &middot; MongoDB</li>
+          <li>Kafka &middot; Redis Pub/Sub</li>
+          <li>WebSockets &middot; Socket.io</li>
+          <li>Sub-second delivery &middot; horizontal scale-out</li>
         </ul>
       </div>
       <div class="skill reveal reveal-d3">
         <span class="sk-no">04</span>
-        <div class="sk-name">Cloud &amp; DevOps</div>
+        <div class="sk-name">Data &amp; Storage</div>
         <ul class="sk-list">
-          <li>AWS &middot; Kubernetes</li>
-          <li>Docker &middot; Grafana</li>
+          <li>PostgreSQL &middot; TimescaleDB</li>
+          <li>ClickHouse &middot; MongoDB &middot; Redis</li>
+          <li>Caching &middot; indexing &middot; schema versioning</li>
         </ul>
       </div>
       <div class="skill reveal">
@@ -856,16 +1011,18 @@
         <div class="sk-name">AI &amp; LLM Engineering</div>
         <ul class="sk-list">
           <li>RAG &middot; vector search (pgvector)</li>
-          <li>LLM APIs &middot; golden-set evals</li>
+          <li>Gemini / OpenAI LLM APIs</li>
+          <li>Golden-set evals &middot; tolerant LLM JSON parsing</li>
           <li>AI-assisted delivery</li>
         </ul>
       </div>
       <div class="skill reveal">
         <span class="sk-no">06</span>
-        <div class="sk-name">Security &amp; Compliance</div>
+        <div class="sk-name">Cloud, DevOps &amp; Security</div>
         <ul class="sk-list">
-          <li>PCI DSS</li>
-          <li>OWASP &middot; input sanitization</li>
+          <li>AWS &middot; Docker &middot; Kubernetes &middot; CI/CD</li>
+          <li>Prometheus/Grafana &middot; OpsGenie</li>
+          <li>PCI DSS &middot; OWASP &middot; input sanitization</li>
         </ul>
       </div>
     </div>
@@ -1137,7 +1294,7 @@
       }
     });
   }, { rootMargin: "-35% 0px -55% 0px" });
-  ["work", "about", "contact"].forEach(function (id) {
+  ["work", "experience", "skills", "about", "contact"].forEach(function (id) {
     var s = document.getElementById(id);
     if (s) spy.observe(s);
   });
@@ -1209,10 +1366,10 @@
       });
     });
 
-    /* experience table rows stagger in once */
-    gsap.from("#experience .xtable tbody tr", {
-      opacity: 0, y: 18, duration: 0.55, stagger: 0.07, ease: "power2.out",
-      scrollTrigger: { trigger: "#experience .xtable", start: "top 78%", once: true }
+    /* experience role cards stagger in once */
+    gsap.from("#experience .xjob", {
+      opacity: 0, y: 18, duration: 0.55, stagger: 0.08, ease: "power2.out",
+      scrollTrigger: { trigger: "#experience .xlist", start: "top 78%", once: true }
     });
 
     ScrollTrigger.refresh();

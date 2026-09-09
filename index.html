@@ -3,12 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prince Kumar - Senior Backend Engineer</title>
-<meta name="description" content="Senior Software Engineer, 6.5+ years. Node.js, Kafka, Redis, TimescaleDB, Kubernetes. Fintech, supply chain, MSP security. I build real-time systems that move money, without breaking.">
+<title>Prince Kumar - Senior Software Engineer</title>
+<meta name="description" content="Senior Software Engineer, 6.5+ years. Node.js, Kafka, Redis, TimescaleDB, Kubernetes, RAG/LLM apps. Fintech, supply chain, MSP security. I build real-time systems that move money, without breaking.">
+<link rel="canonical" href="https://getforprince.online/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Prince Kumar">
+<meta property="og:url" content="https://getforprince.online/">
+<meta property="og:title" content="Prince Kumar - Senior Software Engineer">
+<meta property="og:description" content="I build real-time systems that move money. 6.5+ years across fintech, crypto, supply chain and MSP security — Kafka, Redis, TimescaleDB, Kubernetes. Currently solo-building torek.app, an AI interview-coaching platform.">
+<meta property="og:image" content="https://getforprince.online/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prince Kumar — Senior Software Engineer. I build real-time systems that move money.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Prince Kumar - Senior Software Engineer">
+<meta name="twitter:description" content="Backend &amp; real-time systems: Kafka, Redis, TimescaleDB, Kubernetes. Currently building torek.app, an AI interview-coaching platform.">
+<meta name="twitter:image" content="https://getforprince.online/og.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23ff4f00'/><text x='50' y='71' font-size='58' text-anchor='middle' font-family='Arial, sans-serif' font-weight='700' fill='%23fffefb'>P</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Prince Kumar",
+  "url": "https://getforprince.online/",
+  "image": "https://getforprince.online/og.png",
+  "jobTitle": "Senior Software Engineer",
+  "email": "mailto:getforprince@hotmail.com",
+  "telephone": "+91-87003-25129",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gurugram",
+    "addressRegion": "Haryana",
+    "addressCountry": "IN"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "University School of Information and Communication Technology, GGSIPU"
+  },
+  "knowsAbout": ["Node.js", "TypeScript", "PostgreSQL", "TimescaleDB", "Redis", "Kafka", "Kubernetes", "AWS", "WebSockets", "RAG", "LLM applications", "System Design"],
+  "sameAs": [
+    "https://github.com/get4prince",
+    "https://linkedin.com/in/getforprince",
+    "https://torek.app"
+  ]
+}
+</script>
 <style>
   :root {
     --canvas: #fffefb;
@@ -354,6 +396,28 @@
     background-position: 0 94%;
   }
   .about-sub { color: var(--body); font-size: 18px; max-width: 58ch; margin: 0 auto; }
+  .now-note {
+    display: inline-flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 14px;
+    margin-top: clamp(28px, 4vw, 40px);
+    padding: 13px 20px 13px 14px;
+    border: 1px solid var(--line); border-radius: var(--r-md);
+    background: var(--canvas-soft);
+    font-size: 16.5px; line-height: 1.4; color: var(--body);
+    max-width: 660px;
+  }
+  .now-pill {
+    font-family: var(--font-d); font-size: 11px; font-weight: 700;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--on-primary); background: var(--primary);
+    border-radius: var(--r-sm); padding: 6px 10px;
+  }
+  .now-note a {
+    color: var(--ink); font-weight: 600;
+    text-decoration: underline; text-underline-offset: 4px;
+    text-decoration-color: rgba(32, 21, 21, 0.25);
+  }
+  .now-note a:hover { color: var(--primary); text-decoration-color: var(--primary); }
   .about-facts {
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: clamp(20px, 3vw, 40px);
@@ -412,7 +476,7 @@
 
   /* ---------- SKILLS ---------- */
   .skills {
-    display: grid; grid-template-columns: repeat(4, 1fr);
+    display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 18px; align-items: stretch;
   }
   .skill {
@@ -547,7 +611,7 @@
   <div class="hero-inner">
     <div class="hero-copy">
       <div class="hero-meta">
-        <span class="pill">Senior Backend Engineer</span>
+        <span class="pill">Senior Software Engineer <span class="dim">&middot; Backend &amp; Real-time</span></span>
         <span class="pill"><span class="dot" aria-hidden="true"></span>Open to work <span class="dim">&mdash; Remote / Gurugram, IN</span></span>
       </div>
       <h1>I build <span class="hl">real&#8209;time systems</span> that move money.</h1>
@@ -706,6 +770,10 @@
         I take systems from whiteboard to production &mdash; and own them on call.
         Atomic APIs, honest numbers, no surprises.
       </p>
+      <p class="now-note reveal">
+        <span class="now-pill">Now</span>
+        <span>Solo-building <a href="https://torek.app" target="_blank" rel="noopener">torek.app</a> &mdash; an AI interview-coaching product. RAG-grounded answers, golden-set LLM evals, shipped end-to-end.</span>
+      </p>
       <div class="about-facts reveal reveal-d3">
         <div class="fact"><b>6.5+</b><span>Years shipping</span></div>
         <div class="fact"><b>80+</b><span>MSPs billed end-to-end</span></div>
@@ -781,6 +849,23 @@
         <ul class="sk-list">
           <li>AWS &middot; Kubernetes</li>
           <li>Docker &middot; Grafana</li>
+        </ul>
+      </div>
+      <div class="skill reveal">
+        <span class="sk-no">05</span>
+        <div class="sk-name">AI &amp; LLM Engineering</div>
+        <ul class="sk-list">
+          <li>RAG &middot; vector search (pgvector)</li>
+          <li>LLM APIs &middot; golden-set evals</li>
+          <li>AI-assisted delivery</li>
+        </ul>
+      </div>
+      <div class="skill reveal">
+        <span class="sk-no">06</span>
+        <div class="sk-name">Security &amp; Compliance</div>
+        <ul class="sk-list">
+          <li>PCI DSS</li>
+          <li>OWASP &middot; input sanitization</li>
         </ul>
       </div>
     </div>

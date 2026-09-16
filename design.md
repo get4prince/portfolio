@@ -5,8 +5,10 @@ Reference: VoltAgent/awesome-design-md — `design-md/zapier/DESIGN.md` (inspire
 
 ## Design read
 
-Senior backend engineer portfolio. Audience: recruiters + engineering hiring
-managers scanning fast. Voice: **confident-warm, not cool-tech** — a cream
+Senior backend engineer portfolio (**Senior Software Engineer / Backend**), copy
+aligned to `Prince-Kumar-Resume.pdf` and backend-first (Node.js, TypeScript,
+PostgreSQL, MongoDB, Redis, Kafka, Kubernetes). Audience: recruiters + engineering
+hiring managers scanning fast. Voice: **confident-warm, not cool-tech** — a cream
 canvas, coffee ink, and a single saturated orange CTA. No pure white, no pure
 black, one chromatic accent. Dials: `VARIANCE 6 / MOTION 6 / DENSITY 3`.
 
@@ -53,6 +55,7 @@ is the LCP + a11y element.
 - Orange belongs to CTAs and signal (dots/packets/ticks/underlines), nowhere else.
 - Canvas stays warm cream `#fffefb`; ink is coffee `#201515`, never pure black.
 - Buttons and cards are 12px rounded rectangles — never pills, never square.
-- Copy, IA, nav labels, anchors, resume link, contact details, metrics stay
-  fixed; this file documents a visual system, not a content rewrite.
+- Copy is backend-first and grounded in `Prince-Kumar-Resume.pdf`; this file
+  documents the visual system, so keep tokens, radius, type and the single-accent
+  rule fixed when copy changes.
 - All motion honors `prefers-reduced-motion`.

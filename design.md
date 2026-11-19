@@ -34,8 +34,10 @@ black, one chromatic accent. Dials: `VARIANCE 6 / MOTION 6 / DENSITY 3`.
 - **Hero**: warm cream; left copy = availability pill → Space Grotesk 500
   headline → CTAs (primary orange "View my work", ink "Download CV", text mail
   link). Right 55% = **Warm Signal Core** Three.js scene (below).
-- **Work** (cream-soft band): alternating screenshot-card rows, product-frame
-  chrome + architecture diagrams recolored coffee/cream with orange packets.
+- **Work** (cream-soft band): two-column header (eyebrow + display heading,
+  lead + project meta) above a 2&times;2 grid of case-study cards. Each card
+  carries an orange index, company/period, outcome-led summary, 2&ndash;3
+  impact stats, and tech chips; no diagrams or product-frame chrome.
 - **About** (canvas): centered statement + three stat cards.
 - **Experience** (cream-soft): role list + outline CV button.
 - **Skills** (canvas): 4 equal feature cards with orange index numerals.

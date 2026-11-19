@@ -317,19 +317,76 @@
   .sec-lead { color: var(--body); font-size: 18px; line-height: 1.65; }
 
   /* ---------- FEATURED WORK ---------- */
-  .proj { margin-bottom: clamp(56px, 7vw, 88px); }
-  .proj:last-child { margin-bottom: 0; }
-  .proj-info {
-    max-width: 760px;
-    display: flex; flex-direction: column; gap: 18px;
+  .work-head {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: clamp(24px, 5vw, 72px); align-items: end;
+    margin-bottom: clamp(48px, 6vw, 72px);
   }
-  .proj-title {
+  .work-title {
     font-family: var(--font-d); font-weight: 500;
-    font-size: clamp(1.7rem, 2.9vw, 2.35rem);
+    font-size: clamp(2rem, 4vw, 2.9rem);
     line-height: 1.08; letter-spacing: -0.02em;
-    color: var(--ink);
+    color: var(--ink); margin-top: 20px;
   }
-  .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .work-side { display: grid; gap: 18px; }
+  .work-meta {
+    font-family: var(--font-d); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary);
+  }
+  .work-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(18px, 2.4vw, 28px);
+  }
+  .case-card {
+    background: var(--canvas);
+    border: 1px solid var(--line);
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-card);
+    padding: clamp(24px, 3vw, 36px);
+    display: flex; flex-direction: column; gap: 20px;
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s;
+  }
+  .case-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(32, 21, 21, 0.24);
+    box-shadow: 0 6px 12px rgba(32,21,21,.05), 0 40px 70px -50px rgba(32,21,21,.4);
+  }
+  .case-top { display: flex; align-items: center; gap: 12px; }
+  .case-index {
+    font-family: var(--font-d); font-size: 12px; font-weight: 600;
+    letter-spacing: 0.14em; color: var(--primary);
+    background: rgba(255, 79, 0, 0.09);
+    border-radius: var(--r-sm); padding: 6px 9px; line-height: 1;
+  }
+  .case-org {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--body-mid);
+  }
+  .case-link {
+    margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600; color: var(--ink);
+  }
+  .case-link:hover { color: var(--primary); }
+  .case-title {
+    font-family: var(--font-d); font-weight: 500;
+    font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+    line-height: 1.14; letter-spacing: -0.02em; color: var(--ink);
+  }
+  .case-summary { font-size: 15px; line-height: 1.65; color: var(--body); }
+  .case-stats { display: flex; flex-wrap: wrap; gap: 20px 28px; }
+  .case-stat { display: grid; gap: 4px; }
+  .case-stat b {
+    font-family: var(--font-d); font-weight: 500; font-size: 1.35rem;
+    line-height: 1; letter-spacing: -0.02em; color: var(--ink); white-space: nowrap;
+  }
+  .case-stat span {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--body-mid);
+  }
+  .case-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: auto; padding-top: 20px; border-top: 1px solid var(--line-soft);
+  }
   .chip {
     font-size: 12.5px; font-weight: 600; color: var(--ink-soft);
     background: rgba(32, 21, 21, 0.055);
@@ -337,9 +394,12 @@
     border-radius: 999px; padding: 6px 12px;
     letter-spacing: -0.01em;
   }
-  .chip.co { background: var(--canvas); border-color: var(--line); color: var(--body); }
-  .proj-tags a { color: inherit; text-decoration: none; }
+  .case-tags a { color: inherit; text-decoration: none; }
   .chip a:hover { color: var(--primary); }
+  @media (max-width: 880px) {
+    .work-head { grid-template-columns: 1fr; align-items: start; }
+    .work-grid { grid-template-columns: 1fr; }
+  }
 
   /* ---------- ABOUT ---------- */
   .about-wrap { max-width: 1160px; margin: 0 auto; text-align: center; }
@@ -559,7 +619,7 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
-    .btn, .skill { transition: none; }
+    .btn, .skill, .case-card { transition: none; }
   }
 </style>
 </head>
@@ -615,51 +675,94 @@
 <!-- ================= FEATURED WORK ================= -->
 <section class="sec sec-soft" id="work">
   <div class="wrap">
-    <div class="sec-head">
-      <h2 class="eyebrow reveal">Work</h2>
-      <p class="sec-lead reveal reveal-d1" style="max-width:62ch;">Selected systems and projects &mdash; event-driven pipelines, real-time delivery, billing and account infrastructure, and an AI interview-coaching side project.</p>
+    <div class="work-head">
+      <div>
+        <h2 class="eyebrow reveal">Work</h2>
+        <p class="work-title reveal reveal-d1">Selected work</p>
+      </div>
+      <div class="work-side">
+        <p class="sec-lead reveal reveal-d1">Selected systems and projects &mdash; event-driven pipelines, real-time delivery, billing and account infrastructure, and an AI interview-coaching side project.</p>
+        <p class="work-meta reveal reveal-d2">04 projects &middot; 2020&ndash;2026</p>
+      </div>
     </div>
 
-    <!-- 01 market data pipeline -->
-    <article class="proj">
-      <div class="proj-info reveal reveal-d1">
-        <h3 class="proj-title">Real-time Market Data Pipeline</h3>
-        <div class="proj-tags">
-          <span class="chip">Kafka</span><span class="chip">Node.js</span><span class="chip">WebSockets</span><span class="chip">Caching</span><span class="chip co"><a href="https://hyblockcapital.com">Hyblock Capital</a> &middot; 2020&ndash;22</span>
+    <div class="work-grid">
+      <!-- 01 market data pipeline -->
+      <article class="case-card reveal">
+        <div class="case-top">
+          <span class="case-index" aria-hidden="true">01</span>
+          <span class="case-org">Hyblock Capital &middot; 2020&ndash;22</span>
+          <a class="case-link" href="https://hyblockcapital.com" target="_blank" rel="noopener" aria-label="Visit Hyblock Capital">Visit <span aria-hidden="true">&nearr;</span></a>
         </div>
-      </div>
-    </article>
-
-    <!-- 02 websocket scale-out -->
-    <article class="proj">
-      <div class="proj-info reveal reveal-d1">
-        <h3 class="proj-title">WebSocket Scale-Out Layer</h3>
-        <div class="proj-tags">
-          <span class="chip">Redis Pub/Sub</span><span class="chip">Socket.io</span><span class="chip">Node.js</span><span class="chip">PCI DSS</span><span class="chip co"><a href="https://ixfi.com">IXFI</a> &middot; 2022&ndash;23</span>
+        <h3 class="case-title">Real-time Market Data Pipeline</h3>
+        <p class="case-summary">Streamed 20&ndash;30 crypto market indicators from exchange sockets through Kafka into a real-time analytics pipeline, with caching and delivery monitoring built in.</p>
+        <div class="case-stats">
+          <div class="case-stat"><b>20&ndash;30</b><span>Indicators streamed</span></div>
+          <div class="case-stat"><b>p95</b><span>Delivery latency</span></div>
+          <div class="case-stat"><b>Kafka</b><span>Event backbone</span></div>
         </div>
-      </div>
-    </article>
-
-    <!-- 03 msp billing -->
-    <article class="proj">
-      <div class="proj-info reveal reveal-d1">
-        <h3 class="proj-title">MSP Billing &amp; Account Infrastructure</h3>
-        <div class="proj-tags">
-          <span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">PostgreSQL</span><span class="chip">Kubernetes</span><span class="chip">Pax8</span><span class="chip">ConnectWise</span><span class="chip co"><a href="https://zenkoder.com">ZenKoder</a> &middot; client <a href="https://www.blackpointcyber.com/">Blackpoint</a></span>
+        <div class="case-tags">
+          <span class="chip">Kafka</span><span class="chip">Node.js</span><span class="chip">WebSockets</span><span class="chip">Caching</span>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <!-- 04 torek: ai interview coach -->
-    <article class="proj">
-      <div class="proj-info reveal reveal-d1">
-        <h3 class="proj-title">Torek &mdash; AI Interview Coach</h3>
-        <div class="proj-tags">
-          <span class="chip co"><a href="https://torek.app" target="_blank" rel="noopener">torek.app</a> &middot; 2026 &middot; Founder and solo full-stack</span>
+      <!-- 02 websocket scale-out -->
+      <article class="case-card reveal reveal-d1">
+        <div class="case-top">
+          <span class="case-index" aria-hidden="true">02</span>
+          <span class="case-org">IXFI &middot; 2022&ndash;23</span>
+          <a class="case-link" href="https://ixfi.com" target="_blank" rel="noopener" aria-label="Visit IXFI">Visit <span aria-hidden="true">&nearr;</span></a>
+        </div>
+        <h3 class="case-title">WebSocket Scale-Out Layer</h3>
+        <p class="case-summary">Rebuilt real-time delivery around Redis Pub/Sub so socket connections fan out across a multi-node cluster while preserving per-connection state and message ordering.</p>
+        <div class="case-stats">
+          <div class="case-stat"><b>30K &rarr; 200K</b><span>Users scaled</span></div>
+          <div class="case-stat"><b>Multi-node</b><span>Socket cluster</span></div>
+          <div class="case-stat"><b>PCI DSS</b><span>Compliance</span></div>
+        </div>
+        <div class="case-tags">
+          <span class="chip">Redis Pub/Sub</span><span class="chip">Socket.io</span><span class="chip">Node.js</span><span class="chip">PCI DSS</span>
+        </div>
+      </article>
+
+      <!-- 03 msp billing -->
+      <article class="case-card reveal reveal-d2">
+        <div class="case-top">
+          <span class="case-index" aria-hidden="true">03</span>
+          <span class="case-org">ZenKoder &middot; Client Blackpoint</span>
+          <a class="case-link" href="https://zenkoder.com" target="_blank" rel="noopener" aria-label="Visit ZenKoder">Visit <span aria-hidden="true">&nearr;</span></a>
+        </div>
+        <h3 class="case-title">MSP Billing &amp; Account Infrastructure</h3>
+        <p class="case-summary">Owned the billing and account platform behind Blackpoint&rsquo;s MSP business, shipping Pax8, ConnectWise and five more partner integrations on Kubernetes.</p>
+        <div class="case-stats">
+          <div class="case-stat"><b>80+</b><span>MSP partners</span></div>
+          <div class="case-stat"><b>~$6&ndash;7M</b><span>Annual recurring revenue</span></div>
+          <div class="case-stat"><b>2&ndash;3h</b><span>MTTR from ~6h</span></div>
+        </div>
+        <div class="case-tags">
+          <span class="chip">Node.js</span><span class="chip">MongoDB</span><span class="chip">PostgreSQL</span><span class="chip">Kubernetes</span><span class="chip">Pax8</span><span class="chip">ConnectWise</span>
+        </div>
+      </article>
+
+      <!-- 04 torek: ai interview coach -->
+      <article class="case-card reveal reveal-d3">
+        <div class="case-top">
+          <span class="case-index" aria-hidden="true">04</span>
+          <span class="case-org">torek.app &middot; 2026 &middot; Solo founder</span>
+          <a class="case-link" href="https://torek.app" target="_blank" rel="noopener" aria-label="Visit torek.app">Visit <span aria-hidden="true">&nearr;</span></a>
+        </div>
+        <h3 class="case-title">Torek &mdash; AI Interview Coach</h3>
+        <p class="case-summary">Built an interview-coaching side project end to end, with guided practice rooms and retrieval-grounded feedback over a curated corpus.</p>
+        <div class="case-stats">
+          <div class="case-stat"><b>Gemini</b><span>Embeddings + RAG</span></div>
+          <div class="case-stat"><b>3</b><span>Vercel services</span></div>
+          <div class="case-stat"><b>Solo</b><span>Full-stack build</span></div>
+        </div>
+        <div class="case-tags">
           <span class="chip">Node/TypeScript</span><span class="chip">PostgreSQL &middot; Redis</span><span class="chip">React/Vite</span><span class="chip">RAG &middot; Gemini</span>
         </div>
-      </div>
-    </article>
+      </article>
+    </div>
   </div>
 </section>
 

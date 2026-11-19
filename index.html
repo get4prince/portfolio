@@ -317,14 +317,12 @@
   .sec-lead { color: var(--body); font-size: 18px; line-height: 1.65; }
 
   /* ---------- FEATURED WORK ---------- */
-  .proj {
-    display: flex; align-items: center; gap: clamp(36px, 6vw, 92px);
-    margin-bottom: clamp(88px, 12vw, 148px);
-  }
+  .proj { margin-bottom: clamp(56px, 7vw, 88px); }
   .proj:last-child { margin-bottom: 0; }
-  .proj:nth-child(even) { flex-direction: row-reverse; }
-  .proj-media { flex: 1.12 1 0; min-width: 0; }
-  .proj-info { flex: 0.88 1 0; min-width: 0; display: flex; flex-direction: column; gap: 18px; }
+  .proj-info {
+    max-width: 760px;
+    display: flex; flex-direction: column; gap: 18px;
+  }
   .proj-title {
     font-family: var(--font-d); font-weight: 500;
     font-size: clamp(1.7rem, 2.9vw, 2.35rem);
@@ -342,42 +340,6 @@
   .chip.co { background: var(--canvas); border-color: var(--line); color: var(--body); }
   .proj-tags a { color: inherit; text-decoration: none; }
   .chip a:hover { color: var(--primary); }
-  .shot {
-    background: var(--canvas);
-    border: 1px solid var(--line);
-    border-radius: var(--r-md);
-    box-shadow: var(--shadow-card);
-    padding: clamp(14px, 2vw, 22px);
-    transition: transform .35s var(--ease), box-shadow .35s var(--ease);
-  }
-  .proj:hover .shot { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(32,21,21,.05), 0 44px 80px -52px rgba(32,21,21,.4); }
-  .shot-bar {
-    display: flex; align-items: center; gap: 6px;
-    padding-bottom: 14px; margin-bottom: 16px;
-    border-bottom: 1px solid var(--line-soft);
-  }
-  .shot-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--canvas-soft); border: 1px solid var(--line); }
-  .screen { overflow: hidden; background: var(--canvas); }
-  .screen svg { width: 100%; height: auto; }
-  @media (max-width: 880px) {
-    .proj, .proj:nth-child(even) { flex-direction: column; align-items: stretch; }
-    .proj { margin-bottom: 84px; }
-  }
-
-  /* diagram palette (warm cream product-shot) */
-  svg text { font-family: var(--font-s); }
-  .dg-edge { fill: none; stroke: rgba(32, 21, 21, 0.3); stroke-width: 1.3; }
-  .dg-edge.hot { stroke: var(--primary); stroke-width: 1.7; }
-  .dg-node rect { fill: var(--canvas); stroke: rgba(32, 21, 21, 0.55); stroke-width: 1; }
-  .dg-node.core rect { fill: var(--ink); stroke: var(--ink); }
-  .dg-node.store rect { stroke-dasharray: 5 4; }
-  .dg-node .t { fill: var(--ink); font-size: 13px; font-weight: 600; }
-  .dg-node.core .t { fill: var(--canvas); }
-  .dg-node .s { fill: var(--body-mid); font-size: 10.5px; }
-  .dg-node.core .s { fill: rgba(255, 254, 251, 0.6); }
-  .dg-pkt { fill: var(--primary); }
-  .dg-metric { fill: var(--ink); font-size: 12.5px; font-weight: 600; letter-spacing: 0.05em; }
-  .dg-metric .dim { fill: var(--body-mid); font-weight: 500; font-size: 10.5px; letter-spacing: 0; }
 
   /* ---------- ABOUT ---------- */
   .about-wrap { max-width: 1160px; margin: 0 auto; text-align: center; }
@@ -597,7 +559,7 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
-    .btn, .skill, .shot { transition: none; }
+    .btn, .skill { transition: none; }
   }
 </style>
 </head>
@@ -660,37 +622,6 @@
 
     <!-- 01 market data pipeline -->
     <article class="proj">
-      <div class="proj-media reveal">
-        <div class="shot">
-          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="screen">
-            <svg viewBox="0 0 1000 360" role="img" aria-label="Architecture: exchange feeds through Node socket clients into Kafka, an indicator engine, cache and storage, with monitored real-time delivery.">
-              <path class="dg-edge hot" d="M175,90 L215,90"/><path class="dg-edge hot" d="M365,90 L405,90"/><path class="dg-edge hot" d="M555,90 L595,90"/>
-              <path class="dg-edge" d="M650,112 C650,180 430,180 350,225"/>
-              <path class="dg-edge" d="M710,112 C710,180 530,180 530,225"/>
-              <path class="dg-edge hot" d="M420,255 L465,255"/><path class="dg-edge hot" d="M600,255 L775,255"/>
-              <path class="dg-edge hot" d="M870,225 L870,118"/>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.6s" repeatCount="indefinite" path="M175,90 L215,90"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.6s" begin="0.5s" repeatCount="indefinite" path="M365,90 L405,90"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.6s" begin="0.2s" repeatCount="indefinite" path="M555,90 L595,90"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="2s" repeatCount="indefinite" path="M650,112 C650,180 430,180 350,225"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="2s" begin="1s" repeatCount="indefinite" path="M710,112 C710,180 530,180 530,225"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.8s" repeatCount="indefinite" path="M600,255 L775,255"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.8s" begin="0.9s" repeatCount="indefinite" path="M420,255 L465,255"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.6s" begin="0.7s" repeatCount="indefinite" path="M870,225 L870,118"/></circle>
-              <g class="dg-node"><rect x="35" y="62" width="140" height="56" rx="9"/><text class="t" x="105" y="90" text-anchor="middle">Exchange feeds</text><text class="s" x="105" y="108" text-anchor="middle">crypto sockets</text></g>
-              <g class="dg-node core"><rect x="215" y="62" width="150" height="56" rx="9"/><text class="t" x="290" y="90" text-anchor="middle">Node WS clients</text><text class="s" x="290" y="108" text-anchor="middle">ingest &middot; stream</text></g>
-              <g class="dg-node core"><rect x="405" y="62" width="150" height="56" rx="9"/><text class="t" x="480" y="90" text-anchor="middle">Kafka</text><text class="s" x="480" y="108" text-anchor="middle">market.ticks</text></g>
-              <g class="dg-node core"><rect x="595" y="62" width="150" height="56" rx="9"/><text class="t" x="670" y="90" text-anchor="middle">Indicator engine</text><text class="s" x="670" y="108" text-anchor="middle">20&ndash;30 indicators</text></g>
-              <g class="dg-node"><rect x="775" y="62" width="190" height="56" rx="9"/><text class="t" x="870" y="90" text-anchor="middle">Analytics</text><text class="s" x="870" y="108" text-anchor="middle">real-time delivery</text></g>
-              <g class="dg-node store"><rect x="280" y="225" width="140" height="56" rx="9"/><text class="t" x="350" y="253" text-anchor="middle">Cache</text><text class="s" x="350" y="271" text-anchor="middle">faster history reads</text></g>
-              <g class="dg-node store"><rect x="465" y="225" width="140" height="56" rx="9"/><text class="t" x="535" y="253" text-anchor="middle">Storage</text><text class="s" x="535" y="271" text-anchor="middle">historical data</text></g>
-              <g class="dg-node core"><rect x="775" y="225" width="190" height="56" rx="9"/><text class="t" x="870" y="253" text-anchor="middle">WebSocket layer</text><text class="s" x="870" y="271" text-anchor="middle">monitored delivery</text></g>
-              <text class="dg-metric" x="35" y="38">20&ndash;30 INDICATORS <tspan class="dim">&#183; Kafka streaming &#183; caching for lower query latency</tspan></text>
-            </svg>
-          </div>
-        </div>
-      </div>
       <div class="proj-info reveal reveal-d1">
         <h3 class="proj-title">Real-time Market Data Pipeline</h3>
         <div class="proj-tags">
@@ -701,36 +632,6 @@
 
     <!-- 02 websocket scale-out -->
     <article class="proj">
-      <div class="proj-media reveal">
-        <div class="shot">
-          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="screen">
-            <svg viewBox="0 0 1000 330" role="img" aria-label="Architecture: WebSocket clients connect to a multi-node socket cluster fanning out through a shared Redis Pub/Sub bus.">
-              <path class="dg-edge hot" d="M150,70 L280,70"/><path class="dg-edge hot" d="M150,155 L280,155"/><path class="dg-edge hot" d="M150,240 L280,240"/>
-              <path class="dg-edge hot" d="M395,70 L580,155"/><path class="dg-edge hot" d="M395,240 L580,155"/><path class="dg-edge hot" d="M395,155 L580,155"/>
-              <path class="dg-edge" d="M745,155 L900,155"/>
-              <path class="dg-edge" d="M745,155 C660,60 470,60 400,130"/>
-              <path class="dg-edge" d="M745,155 C660,250 470,250 400,190"/>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.4s" repeatCount="indefinite" path="M150,70 L280,70"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.4s" begin="0.5s" repeatCount="indefinite" path="M150,155 L280,155"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.4s" begin="1s" repeatCount="indefinite" path="M150,240 L280,240"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.8s" repeatCount="indefinite" path="M395,70 L580,155"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.8s" begin="0.6s" repeatCount="indefinite" path="M395,155 L580,155"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.8s" begin="1.2s" repeatCount="indefinite" path="M395,240 L580,155"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="2s" begin="0.3s" repeatCount="indefinite" path="M745,155 L900,155"/></circle>
-              <g class="dg-node"><rect x="30" y="42" width="120" height="56" rx="9"/><text class="t" x="90" y="70" text-anchor="middle">Client A</text><text class="s" x="90" y="88" text-anchor="middle">ws://</text></g>
-              <g class="dg-node"><rect x="30" y="127" width="120" height="56" rx="9"/><text class="t" x="90" y="155" text-anchor="middle">Client B</text><text class="s" x="90" y="173" text-anchor="middle">ws://</text></g>
-              <g class="dg-node"><rect x="30" y="212" width="120" height="56" rx="9"/><text class="t" x="90" y="240" text-anchor="middle">Client C</text><text class="s" x="90" y="258" text-anchor="middle">ws://</text></g>
-              <g class="dg-node core"><rect x="280" y="42" width="115" height="56" rx="9"/><text class="t" x="337" y="70" text-anchor="middle">socket-1</text><text class="s" x="337" y="88" text-anchor="middle">node pod</text></g>
-              <g class="dg-node core"><rect x="280" y="127" width="115" height="56" rx="9"/><text class="t" x="337" y="155" text-anchor="middle">socket-2</text><text class="s" x="337" y="173" text-anchor="middle">node pod</text></g>
-              <g class="dg-node core"><rect x="280" y="212" width="115" height="56" rx="9"/><text class="t" x="337" y="240" text-anchor="middle">socket-N</text><text class="s" x="337" y="258" text-anchor="middle">node pod</text></g>
-              <g class="dg-node store"><rect x="580" y="127" width="165" height="56" rx="9"/><text class="t" x="662" y="155" text-anchor="middle">Redis Pub/Sub</text><text class="s" x="662" y="173" text-anchor="middle">fan-out bus</text></g>
-              <g class="dg-node"><rect x="900" y="127" width="80" height="56" rx="9"/><text class="t" x="940" y="155" text-anchor="middle">Users</text><text class="s" x="940" y="173" text-anchor="middle">200K</text></g>
-              <text class="dg-metric" x="30" y="24">HORIZONTAL SCALE-OUT <tspan class="dim">&#183; per-connection state &#183; message ordering</tspan></text>
-            </svg>
-          </div>
-        </div>
-      </div>
       <div class="proj-info reveal reveal-d1">
         <h3 class="proj-title">WebSocket Scale-Out Layer</h3>
         <div class="proj-tags">
@@ -741,32 +642,6 @@
 
     <!-- 03 msp billing -->
     <article class="proj">
-      <div class="proj-media reveal">
-        <div class="shot">
-          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="screen">
-            <svg viewBox="0 0 1000 310" role="img" aria-label="Architecture: MSP partners call billing and account services, integrated with Pax8 and ConnectWise.">
-              <path class="dg-edge hot" d="M185,60 L220,60"/>
-              <path class="dg-edge hot" d="M380,60 L470,60"/>
-              <path class="dg-edge" d="M570,86 C570,160 600,160 600,205"/>
-              <path class="dg-edge" d="M570,86 C570,160 860,160 860,205"/>
-              <path class="dg-edge hot" d="M570,60 L800,60"/>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.4s" repeatCount="indefinite" path="M185,60 L220,60"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.6s" begin="0.4s" repeatCount="indefinite" path="M380,60 L470,60"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="2.4s" begin="0.6s" repeatCount="indefinite" path="M570,86 C570,160 600,160 600,205"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="3s" begin="0.3s" repeatCount="indefinite" path="M570,86 C570,160 860,160 860,205"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.6s" begin="0.8s" repeatCount="indefinite" path="M570,60 L800,60"/></circle>
-              <g class="dg-node"><rect x="25" y="32" width="160" height="56" rx="9"/><text class="t" x="105" y="60" text-anchor="middle">MSP partner</text><text class="s" x="105" y="78" text-anchor="middle">bills end users</text></g>
-              <g class="dg-node core"><rect x="220" y="32" width="160" height="56" rx="9"/><text class="t" x="300" y="60" text-anchor="middle">Billing API</text><text class="s" x="300" y="78" text-anchor="middle">Node.js services</text></g>
-              <g class="dg-node store"><rect x="470" y="32" width="200" height="56" rx="9"/><text class="t" x="570" y="60" text-anchor="middle">PostgreSQL / MongoDB</text><text class="s" x="570" y="78" text-anchor="middle">account &amp; billing data</text></g>
-              <g class="dg-node"><rect x="800" y="32" width="180" height="56" rx="9"/><text class="t" x="890" y="60" text-anchor="middle">80+ MSPs</text><text class="s" x="890" y="78" text-anchor="middle">~$6&ndash;7M ARR</text></g>
-              <g class="dg-node core"><rect x="525" y="205" width="150" height="56" rx="9"/><text class="t" x="600" y="233" text-anchor="middle">Pax8</text><text class="s" x="600" y="251" text-anchor="middle">integration</text></g>
-              <g class="dg-node core"><rect x="790" y="205" width="170" height="56" rx="9"/><text class="t" x="875" y="233" text-anchor="middle">ConnectWise</text><text class="s" x="875" y="251" text-anchor="middle">integration</text></g>
-              <text class="dg-metric" x="25" y="16">BILLING &amp; ACCOUNT INFRASTRUCTURE <tspan class="dim">&#183; 7 partner integrations &#183; Kubernetes</tspan></text>
-            </svg>
-          </div>
-        </div>
-      </div>
       <div class="proj-info reveal reveal-d1">
         <h3 class="proj-title">MSP Billing &amp; Account Infrastructure</h3>
         <div class="proj-tags">
@@ -777,30 +652,6 @@
 
     <!-- 04 torek: ai interview coach -->
     <article class="proj">
-      <div class="proj-media reveal">
-        <div class="shot">
-          <div class="shot-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="screen">
-            <svg viewBox="0 0 1000 330" role="img" aria-label="AI interview-coaching flow: guided practice rooms with retrieval-grounded answers over a curated corpus.">
-              <path class="dg-edge hot" d="M180,70 L240,70"/><path class="dg-edge hot" d="M390,70 L460,70"/><path class="dg-edge hot" d="M610,70 L700,70"/>
-              <path class="dg-edge" d="M535,98 L535,205"/>
-              <path class="dg-edge hot" d="M610,233 L700,233"/>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.5s" repeatCount="indefinite" path="M180,70 L240,70"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.5s" begin="0.6s" repeatCount="indefinite" path="M390,70 L460,70"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="1.8s" begin="0.3s" repeatCount="indefinite" path="M610,70 L700,70"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="2s" begin="0.5s" repeatCount="indefinite" path="M535,98 L535,205"/></circle>
-              <circle class="dg-pkt" r="4"><animateMotion dur="2.2s" begin="0.4s" repeatCount="indefinite" path="M610,233 L700,233"/></circle>
-              <g class="dg-node"><rect x="30" y="42" width="150" height="56" rx="9"/><text class="t" x="105" y="70" text-anchor="middle">Practice room</text><text class="s" x="105" y="88" text-anchor="middle">coding &middot; behavioral &middot; design</text></g>
-              <g class="dg-node store"><rect x="240" y="42" width="150" height="56" rx="9"/><text class="t" x="315" y="70" text-anchor="middle">Retrieval</text><text class="s" x="315" y="88" text-anchor="middle">Gemini embeddings</text></g>
-              <g class="dg-node core"><rect x="460" y="42" width="150" height="56" rx="9"/><text class="t" x="535" y="70" text-anchor="middle">LLM</text><text class="s" x="535" y="88" text-anchor="middle">grounded answers</text></g>
-              <g class="dg-node"><rect x="700" y="42" width="200" height="56" rx="9"/><text class="t" x="800" y="70" text-anchor="middle">AI hints &amp; answers</text><text class="s" x="800" y="88" text-anchor="middle">guided practice</text></g>
-              <g class="dg-node store"><rect x="460" y="205" width="150" height="56" rx="9"/><text class="t" x="535" y="233" text-anchor="middle">Curated corpus</text><text class="s" x="535" y="251" text-anchor="middle">similarity search</text></g>
-              <g class="dg-node store"><rect x="700" y="205" width="200" height="56" rx="9"/><text class="t" x="800" y="233" text-anchor="middle">3 Vercel services</text><text class="s" x="800" y="251" text-anchor="middle">React/Vite frontend</text></g>
-              <text class="dg-metric" x="30" y="18">AI INTERVIEW COACHING <tspan class="dim">&#183; RAG over Gemini embeddings &#183; tolerant LLM JSON parsing</tspan></text>
-            </svg>
-          </div>
-        </div>
-      </div>
       <div class="proj-info reveal reveal-d1">
         <h3 class="proj-title">Torek &mdash; AI Interview Coach</h3>
         <div class="proj-tags">
@@ -1341,15 +1192,6 @@
     gsap.to(".hero-copy", {
       opacity: 0, y: -46, ease: "none",
       scrollTrigger: { trigger: "#top", start: "top top", end: "70% top", scrub: true }
-    });
-
-    /* subtle parallax inside project diagram screens */
-    document.querySelectorAll(".screen svg").forEach(function (svg) {
-      var shot = svg.closest(".shot");
-      gsap.fromTo(svg, { yPercent: 3 }, {
-        yPercent: -3, ease: "none",
-        scrollTrigger: { trigger: shot, start: "top bottom", end: "bottom top", scrub: true }
-      });
     });
 
     /* experience role cards stagger in once */
